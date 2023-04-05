@@ -66,16 +66,15 @@ app.put('/employee/:id', async(req, res)=>{
 //delete employee details
 app.delete('/employee/:id', async(req, res)=>{
     try{
-        const {id} = req.params
-        const employee = await empModel.findByIdAndDelte(id);
+        const {id} = req.params;
+        const employee = await empModel.findByIdAndDelete(id);
         if(!employee){
             res.status(404).json({message:'employee not found'})
         }
-        res.status(200).json({message:'successfully deleted'});
-
+        res.status(200).json({message:'Successfully Deleted'})
     }catch(error){
         console.log(error.message);
-        res.send(500).json({message:error.message})
+        res.status(500).json({message:error.message})
     }
 })
 
