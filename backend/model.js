@@ -20,11 +20,12 @@ const empSchema = mongoose.Schema(
             type:String,
             required:false,
         },
-        // {
-        //     timeStamps
-        // }
+        
 
-    }
+    },
+    // {
+    //     timeStamps
+    // }
 )
 
 const empModel = mongoose.model('empmodel', empSchema);
